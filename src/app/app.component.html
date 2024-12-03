@@ -5,8 +5,8 @@
 
       <div class="field">
         <label>Length</label>
-        <input class="input" (input)="onInputChange($event)" /> 
-      </div> 
+        <input class="input" (input)="onInputChange($event)" />
+      </div>
 
       <div class="field">
         <div class="control">
@@ -41,9 +41,12 @@
         Generate!
       </button>
 
-      <div class="box" *ngIf="password">
+      <!-- <p>Password Debug: {{ password }}</p> -->
+
+      <!-- Conditional Display of Password -->
+      <div class="box" *ngIf="password && password.length > 0">
         <label>Your Password</label>
-        <input class="input" [value]="password" />
+        <input class="input" [value]="password" readonly />
       </div>
     </div>
   </div>
