@@ -1,4 +1,4 @@
-<div class="container">
+<!-- <div class="container">
   <div class="columns is-centered">
     <div class="box column is-one-third">
       <h1 class="title has-text-centered">Password Generator</h1>
@@ -41,13 +41,38 @@
         Generate!
       </button>
 
-      <!-- <p>Password Debug: {{ password }}</p> -->
+      <p>Password Debug: {{ password }}</p> -->
 
       <!-- Conditional Display of Password -->
-      <div class="box" *ngIf="password && password.length > 0">
+      <!-- <div class="box" *ngIf="password && password.length > 0">
         <label>Your Password</label>
         <input class="input" [value]="password" readonly />
       </div>
     </div>
   </div>
+</div> --> 
+
+<label for=""> please enter a length</label>
+<input (input)="inputEntered($event)" />
+
+<div>
+  <label for=""> select string</label>
+  <input (change)="stringCheckBox($event)" type="checkbox" />
+</div>
+
+<div>
+  <label for=""> select number</label>
+  <input (change)="stringCheckBox($event)" type="checkbox" />
+</div>
+
+<div>
+  <label for=""> select special character</label>
+  <input (change)="stringCheckBox($event)" type="checkbox" />
+</div>
+
+<button (submit)="onSubmitClick($event)"  class="button is-link is-fullwidth"> Generate!</button>
+
+<div>
+  <label for="">here is your generated password</label>
+  <input [value]="newlyGeneratedPassword" />
 </div>
